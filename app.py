@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 phone_id = os.getenv("PHONE_ID")
 access_token = os.getenv("ACCESS_TOKEN")
+port = int(os.environ.get("PORT", 8000))
 app = FastAPI()
 
 RECIPIENT = "+972527553195"  # recipient phone number in international format
@@ -80,4 +81,4 @@ def send_message(recipient_id, message_text):
 
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=port)
