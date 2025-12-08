@@ -2,6 +2,7 @@ import requests
 import json
 import uvicorn
 from fastapi import FastAPI, Request
+from fastapi.responses import PlainTextResponse
 import os
 from dotenv import load_dotenv
 
@@ -13,7 +14,6 @@ app = FastAPI()
 
 RECIPIENT = "+972527553195"  # recipient phone number in international format
 
-
 VERIFY_TOKEN = "9P0CPkoVQaDULkdtd7PU"  # same value you put in Meta
 
 
@@ -22,8 +22,8 @@ async def verify_webhook(
     hub_mode: str = None, hub_verify_token: str = None, hub_challenge: str = None
 ):
     if hub_mode == "subscribe" and hub_verify_token == VERIFY_TOKEN:
-        return int(hub_challenge)
-    return "Verification failed"
+        return PlainTextResponse(content=hub_challenge)
+    return PlainTextResponse(content="Verification failed", status_code=403)
 
 
 @app.post("/webhook")
@@ -44,16 +44,13 @@ async def receive_message(request: Request):
             print("Message from:", sender)
             print("Text:", text)
 
-            # Reply to sender
-            send_reply(sender, "Received: " + text)
-
     except Exception as e:
         print("Webhook handling error:", e)
 
     return "OK"
 
 
-def send_message(recipient_id, message_text):
+def send_message():
     url = f"https://graph.facebook.com/v22.0/{phone_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
