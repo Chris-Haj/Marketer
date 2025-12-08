@@ -5,6 +5,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import PlainTextResponse
 import os
 from dotenv import load_dotenv
+from fastapi import Query
 
 load_dotenv()
 phone_id = os.getenv("PHONE_ID")
@@ -19,7 +20,9 @@ VERIFY_TOKEN = "9P0CPkoVQaDULkdtd7PU"  # same value you put in Meta
 
 @app.get("/webhook")
 async def verify_webhook(
-    hub_mode: str = None, hub_verify_token: str = None, hub_challenge: str = None
+    hub_mode: str = Query(None, alias="hub.mode"),
+    hub_verify_token: str = Query(None, alias="hub.verify_token"),
+    hub_challenge: str = Query(None, alias="hub.challenge"),
 ):
     if hub_mode == "subscribe" and hub_verify_token == VERIFY_TOKEN:
         return PlainTextResponse(content=hub_challenge)
