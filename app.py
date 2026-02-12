@@ -9,6 +9,7 @@ from fastapi import Query
 
 load_dotenv()
 phone_id = os.getenv("PHONE_ID")
+whatsapp_id = os.getenv("WHATSAPP_ID")
 access_token = os.getenv("ACCESS_TOKEN")
 port = int(os.environ.get("PORT", 8000))
 app = FastAPI()
@@ -53,6 +54,43 @@ async def receive_message(request: Request):
     return "OK"
 
 
+def send_custom_message(text: str):
+    url = f"https://graph.facebook.com/v22.0/{phone_id}/messages"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+    }
+
+    data = {
+        "messaging_product": "whatsapp",
+        "to": RECIPIENT,
+        "type": "text",
+        "text": {"body": text},
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    return response.json()
+
+
+import threading
+
+
+def terminal_sender():
+    while True:
+        try:
+            message = input("Type message to send (or 'exit'): ")
+
+            if message.lower() == "exit":
+                print("Stopping sender...")
+                break
+
+            result = send_custom_message(message)
+            print("Response:", result)
+
+        except Exception as e:
+            print("Send error:", e)
+
+
 def send_message():
     url = f"https://graph.facebook.com/v22.0/{phone_id}/messages"
     headers = {
@@ -81,4 +119,8 @@ def send_message():
 
 
 if __name__ == "__main__":
+    # Start terminal sender in separate thread
+    sender_thread = threading.Thread(target=terminal_sender, daemon=True)
+    sender_thread.start()
+
     uvicorn.run(app, host="0.0.0.0", port=port)
