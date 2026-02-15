@@ -6,14 +6,15 @@ from fastapi.responses import PlainTextResponse
 import os
 from dotenv import load_dotenv
 from fastapi import Query
-import pygame
 import time
 from queue import Queue
 import uuid
 
 
 audio_queue = Queue()
-pygame.mixer.init()
+
+import subprocess
+import os
 
 
 def audio_worker():
@@ -21,11 +22,13 @@ def audio_worker():
     while True:
         filepath = audio_queue.get()
         try:
-            pygame.mixer.music.load(filepath)
-            pygame.mixer.music.play()
+            print("Playing:", filepath)
 
-            while pygame.mixer.music.get_busy():
-                time.sleep(0.1)
+            subprocess.run(
+                ["ffplay", "-nodisp", "-autoexit", "-loglevel", "quiet", filepath]
+            )
+
+            os.remove(filepath)
 
         except Exception as e:
             print("Playback error:", e)
@@ -64,15 +67,6 @@ def download_and_queue_audio(media_id):
         audio_queue.put(file_path)
     else:
         print("No media URL returned")
-
-
-def play_audio(filepath):
-    pygame.mixer.music.load(filepath)
-    pygame.mixer.music.play()
-
-    # Wait until playback finishes
-    while pygame.mixer.music.get_busy():
-        time.sleep(0.1)
 
 
 load_dotenv()
