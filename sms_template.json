@@ -1,0 +1,227 @@
+[
+  {
+    "id": 2,
+    "message_key": "NEW_INVOICE_GENERATED",
+    "content_en": "A new invoice was issued for {$userNo}, Details are available on https://my.jet.net.il/auth/login",
+    "content_ar": "تم إصدار فاتورة اشتراك {$userNo} والتفاصيل متوفرة على الموقع https://my.jet.net.il/auth/login",
+    "content_he": "חשבונית מנוי  {$userNo} הונפקה ، פרטים נוספים זמינים באתר https://my.jet.net.il/auth/login",
+    "description": "A New Invoice Issued",
+    "variables": {}
+  },
+  {
+    "id": 3,
+    "message_key": "COOLZONE_ACCOUNT",
+    "content_en": "Your CoolZone account credentials:<br>Username: {czuser}<br>Password: {password}",
+    "content_ar": "حسابك على كوول زون هو<br>User: {czuser}<br>PW: {password}",
+    "content_he": "פרטי החשבון שלך ב-CoolZone:<br>שם משתמש: {czuser}<br>סיסמה: {password}\r\n",
+    "description": "Coolzone Account",
+    "variables": {}
+  },
+  {
+    "id": 26,
+    "message_key": "welcome_jet_fiber",
+    "content_en": "Thank you for choosing Jet Fiber Internet. Your subscription number is {subscription_id}. For assistance call *3164",
+    "content_ar": "شكرا لاختيارك انترنت جت فايبر رقم اشتراكك {subscription_id} للمساعدة اتصل *3164",
+    "content_he": "תודה שבחרת באינטרנט ג'ט פייבר. מספר המנוי שלך הוא {subscription_id}. לעזרה התקשר *3164",
+    "description": "Welcome message sent after new subscription registration",
+    "variables": "subscription_id"
+  },
+  {
+    "id": 29,
+    "message_key": "payment_received",
+    "content_en": "Amount of {amount} shekels received for subscription invoice {subscription_id}. Invoice available on your email or at https://my.jet.net.il",
+    "content_ar": "تم استلام مبلغ {amount} شيكل عن فاتورة اشتراك {subscription_id} الفاتورة متاحة على بريدك الالكتروني أو من خلال الرابط https://my.jet.net.il",
+    "content_he": "התקבל סכום של {amount} שקלים עבור חשבונית מנוי {subscription_id}. החשבונית זמינה במייל או בקישור https://my.jet.net.il",
+    "description": "Payment received confirmation message",
+    "variables": "amount, subscription_id"
+  },
+  {
+    "id": 30,
+    "message_key": "payment_success_card",
+    "content_en": "Successfully collected {amount} shekels from card for subscription {subscription_id}. Invoice available on your email or at https://my.jet.net.il",
+    "content_ar": "تم بنجاح تحصيل {amount} شيكل من بطاقة اشتراك {subscription_id}, الفاتورة متاحة على بريدك الالكتروني أو من خلال الرابط https://my.jet.net.il",
+    "content_he": "נגבה בהצלחה {amount} שקלים מהכרטיס עבור מנוי {subscription_id}. החשבונית זמינה במייל או בקישור https://my.jet.net.il",
+    "description": "Successful card collection message",
+    "variables": "amount, subscription_id"
+  },
+  {
+    "id": 31,
+    "message_key": "payment_success_card_email",
+    "content_en": "Successfully collected {amount} shekels from card for subscription {subscription_id}. Invoice sent to your registered email.",
+    "content_ar": "تم بنجاح تحصيل {amount} شيكل من بطاقة اشتراك {subscription_id} تم ارسال الفاتورة للبريد الالكتروني المسجل لدينا",
+    "content_he": "נגבה בהצלחה {amount} שקלים מהכרטיס עבור מנוי {subscription_id}. החשבונית נשלחה למייל הרשום.",
+    "description": "Successful card collection with email notification",
+    "variables": "amount, subscription_id"
+  },
+  {
+    "id": 33,
+    "message_key": "invoice_issued",
+    "content_en": "Invoice of {amount} shekels issued for subscription {subscription_id}. Invoice available on your email or at https://my.jet.net.il",
+    "content_ar": "تم اصدار فاتورة {amount} شيكل على اشتراك {subscription_id}, الفاتورة متاحة على بريدك الالكتروني أو من خلال الرابط https://my.jet.net.il",
+    "content_he": "הופקה חשבונית של {amount} שקלים עבור מנוי {subscription_id}. החשבונית זמינה במייל או בקישור https://my.jet.net.il",
+    "description": "Invoice issued notification",
+    "variables": "amount, subscription_id"
+  },
+  {
+    "id": 34,
+    "message_key": "refund_success",
+    "content_en": "Amount {amount} has been refunded to card {last4_card} for subscription {subscription_id}",
+    "content_ar": "تم ارجاع مبلغ {amount} الى بطاقة {last4_card} لاشتراك رقم {subscription_id}",
+    "content_he": "סכום {amount} הוחזר לכרטיס {last4_card} עבור מנוי {subscription_id}",
+    "description": "Refund success notification",
+    "variables": "amount, last4_card, subscription_id"
+  },
+  {
+    "id": 35,
+    "message_key": "collection_failed_update_card",
+    "content_en": "Invoice collection failed from card {last4_card}. To ensure service continuity, update card info at https://jet.net.il/activate-service/{reference}",
+    "content_ar": "فشل جباية فاتورة من بطاقة {last4_card} لضمان استمرار الخدمة حدث معلومات البطاقة من الرابط https://jet.net.il/activate-service/{reference}",
+    "content_he": "גביית חשבונית נכשלה מכרטיס {last4_card}. להבטחת המשך השירות, עדכן פרטי כרטיס בקישור https://jet.net.il/activate-service/{reference}",
+    "description": "Collection failure with card update link",
+    "variables": "last4_card, reference"
+  },
+  {
+    "id": 36,
+    "message_key": "update_card_reminder",
+    "content_en": "To ensure service continuity, update your card information at https://jet.net.il/activate-service/{reference}",
+    "content_ar": "لضمان استمرار الخدمة حدث معلومات البطاقة من الرابط https://jet.net.il/activate-service/{reference}",
+    "content_he": "להבטחת המשך השירות, עדכן את פרטי הכרטיס בקישור https://jet.net.il/activate-service/{reference}",
+    "description": "Card update reminder message",
+    "variables": "reference"
+  },
+  {
+    "id": 37,
+    "message_key": "payment_reminder",
+    "content_en": "To ensure service continuity, please pay subscription invoice {subscription_id}. Jet Fiber *3164. To pay, visit https://my.jet.net.il/",
+    "content_ar": "لضمان استمرار الخدمة يرجى تسديد فاتورة اشتراك {subscription_id} جت فايبر 3164 * لتسديد الفاتورة يرجى زيارة https://my.jet.net.il/",
+    "content_he": "להבטחת המשך השירות, אנא שלם חשבונית מנוי {subscription_id}. ג'ט פייבר *3164. לתשלום בקר ב-https://my.jet.net.il/",
+    "description": "Payment reminder message",
+    "variables": "subscription_id"
+  },
+  {
+    "id": 38,
+    "message_key": "installation_location",
+    "content_en": "To complete your order {reference} installation, please open the link to set the installation address. We recommend setting the location while at the installation site https://jet.net.il/set-location/{reference}",
+    "content_ar": "لاستكمال تركيب طلبك رقم {reference} يرجى فتح الرابط لتحديد عنوان مكان التركيب. ننصح بتثبيت الموقع عندما تكون في الموقع المراد التركيب فيه https://jet.net.il/set-location/{reference}",
+    "content_he": "להשלמת התקנת הזמנה {reference}, אנא פתח את הקישור לקביעת כתובת ההתקנה. מומלץ לקבוע את המיקום כשאתה באתר ההתקנה https://jet.net.il/set-location/{reference}",
+    "description": "Installation location request message",
+    "variables": "reference"
+  },
+  {
+    "id": 39,
+    "message_key": "send_credentials",
+    "content_en": "user : {username} %0a pw : {password}",
+    "content_ar": "user : {username} %0a pw : {password}",
+    "content_he": "user : {username} %0a pw : {password}",
+    "description": "Send username and password credentials",
+    "variables": "username, password"
+  },
+  {
+    "id": 40,
+    "message_key": "team_on_the_way",
+    "content_en": "JetFiber team is on the way to install your new line",
+    "content_ar": "فريق جيت فايبر بالطريق إليك لتركيب الخط الجديد",
+    "content_he": "צוות JetFiber בדרך אליך להתקנת הקו החדש",
+    "description": "SMS sent when task status changes to 2 (team on the way) for CUSTOMER_DATE",
+    "variables": {}
+  },
+  {
+    "id": 41,
+    "message_key": "installation_started",
+    "content_en": "JetFiber team has started installing your line. To complete activation, please enter your card information via the link https://jet.net.il/activate-service/{reference}",
+    "content_ar": "فريق جيت فايبر بدأ بتركيب خطك الآن. لاستكمال التفعيل يرجى إدخال معلومات الفيزا عبر الرابط https://jet.net.il/activate-service/{reference}",
+    "content_he": "צוות JetFiber החל בהתקנת הקו שלך. להשלמת ההפעלה, אנא הזן את פרטי הכרטיס דרך הקישור https://jet.net.il/activate-service/{reference}",
+    "description": "SMS sent when task status changes to 3 (installation started) for CUSTOMER_DATE",
+    "variables": "reference"
+  },
+  {
+    "id": 42,
+    "message_key": "invoice_issued_cash",
+    "content_en": "Invoice issued for subscription {subscription_id}. Details available at https://my.jet.net.il/",
+    "content_ar": "صدرت فاتورة اشتراك {subscription_id} التفاصيل متوفرة على الموقع https://my.jet.net.il/",
+    "content_he": "הונפקה חשבונית למנוי {subscription_id}. פרטים באתר https://my.jet.net.il/",
+    "description": "Invoice issued for cash payment customers",
+    "variables": "subscription_id"
+  },
+  {
+    "id": 43,
+    "message_key": "invoice_payment_reminder",
+    "content_en": "To ensure service continuity for subscription {subscription_id}, please pay within 2 days bit.ly/jetF",
+    "content_ar": "لضمان استمرار الخدمة لاشتراك {subscription_id} يرجى التسديد خلال يومين bit.ly/jetF",
+    "content_he": "להבטחת המשך השירות למנוי {subscription_id}, אנא שלם תוך יומיים bit.ly/jetF",
+    "description": "Payment reminder for unpaid invoices - 2 days notice",
+    "variables": "subscription_id"
+  },
+  {
+    "id": 44,
+    "message_key": "invoice_issued_visa",
+    "content_en": "Invoice issued for subscription {subscription_id}. Will be charged from card {last4} on day {collection_day} of this month",
+    "content_ar": "صدرت فاتورة اشتراك {subscription_id} سيتم جبايتها من بطاقة {last4} يوم {collection_day} الشهر الحالي",
+    "content_he": "הונפקה חשבונית למנוי {subscription_id}. תחויב מכרטיס {last4} ביום {collection_day} לחודש",
+    "description": "Invoice issued for VISA payment customers",
+    "variables": "subscription_id,last4,collection_day"
+  },
+  {
+    "id": 45,
+    "message_key": "payment_collected_success",
+    "content_en": "Successfully collected {amount} NIS from card for subscription {subscription_id}. Invoice sent to registered email",
+    "content_ar": "تم بنجاح تحصيل {amount} شيكل من بطاقة اشتراك {subscription_id} تم ارسال الفاتورة للبريد الالكتروني المسجل لدينا",
+    "content_he": "נגבה בהצלחה {amount} ש\"ח מהכרטיס עבור מנוי {subscription_id}. חשבונית נשלחה למייל הרשום",
+    "description": "Payment collected successfully notification",
+    "variables": "amount,subscription_id"
+  },
+  {
+    "id": 46,
+    "message_key": "payment_collection_failed",
+    "content_en": "Failed to collect invoice from card {last4}. To ensure service continuity, update card info at https://jet.net.il/site/request Reference: {reference}",
+    "content_ar": "فشل جباية فاتورة من بطاقة {last4} لضمان استمرار الخدمة حدث معلومات البطاقة من الرابط https://jet.net.il/site/request رقم الطلب {reference}",
+    "content_he": "נכשלה גביית חשבונית מכרטיס {last4}. להבטחת המשך השירות, עדכן פרטי כרטיס ב https://jet.net.il/site/request מספר בקשה: {reference}",
+    "description": "Payment collection failed notification",
+    "variables": "last4,reference"
+  },
+  {
+    "id": 47,
+    "message_key": "payment_due_3_days",
+    "content_en": "Please pay subscription {line} within 3 days. We are always at your service *3164",
+    "content_ar": "يرجى تسديد اشتراك {line} خلال 3 أيام نحن دائما في خدمتك *3164",
+    "content_he": "אנא שלם מנוי {line} תוך 3 ימים. אנחנו תמיד לשירותך *3164",
+    "description": "Payment due in 3 days reminder",
+    "variables": "line"
+  },
+  {
+    "id": 48,
+    "message_key": "internet_disconnected_unpaid",
+    "content_en": "Internet disconnected due to unpaid invoice. To restore service and defer payment call *3164",
+    "content_ar": "الإنترنت مفصول بسبب فاتورة لإعادة الخدمة وتأجيل الدفع اتصل *3164",
+    "content_he": "האינטרנט מנותק בשל חשבונית שלא שולמה. לשחזור השירות ודחיית תשלום התקשר *3164",
+    "description": "Internet disconnected due to unpaid invoice",
+    "variables": {}
+  },
+  {
+    "id": 49,
+    "message_key": "payment_due_24_hours",
+    "content_en": "Please pay subscription {line} within 24 hours. We are always at your service *3164",
+    "content_ar": "يرجى تسديد اشتراك {line} خلال 24 ساعة نحن دائما في خدمتك *3164",
+    "content_he": "אנא שלם מנוי {line} תוך 24 שעות. אנחנו תמיד לשירותך *3164",
+    "description": "Payment due in 24 hours reminder",
+    "variables": "line"
+  },
+  {
+    "id": 50,
+    "message_key": "invoice_pending_notification",
+    "content_en": "JetFiber invoice issued for subscription {subscription_id}. Please pay within 3 days. Cash payment points at {dealers_link}. VISA registered customers will be charged automatically. For help call *3164",
+    "content_ar": "تم اصدار فاتورة جت فايبر اشتراك رقم {subscription_id} يرجى تسديدها خلال 3 ايام، نقاط الدفع الكاش في الرابط {dealers_link} المشتركين المسجلين بطاقة الفيزا لدينا يتم السحب تلقائياً من النظام حسب التاريخ المتفق عليه، للمساعدة اتصل *3164",
+    "content_he": "הונפקה חשבונית JetFiber למנוי {subscription_id}. אנא שלם תוך 3 ימים. נקודות תשלום במזומן ב {dealers_link}. לקוחות עם כרטיס אשראי יחויבו אוטומטית. לעזרה התקשר *3164",
+    "description": "Pending invoice notification with payment options",
+    "variables": "subscription_id,dealers_link"
+  },
+  {
+    "id": 51,
+    "message_key": "payment_reminder_overdue",
+    "content_en": "To ensure service continuity, please pay overdue invoices for subscription {subscription_id} by updating VISA info or at cash payment points {dealers_link}. For help call *3164",
+    "content_ar": "لضمان استمرار الخدمة، يرجى تسديد الفواتير المستحقة لاشتراك رقم {subscription_id} من خلال تحديث معلومات بطاقة الفيزا لدينا أو في نقاط الدفع الكاش الموجودة في الرابط {dealers_link} للمساعدة اتصل *3164",
+    "content_he": "להבטחת המשך השירות, אנא שלם חשבוניות שטרם שולמו למנוי {subscription_id} על ידי עדכון פרטי כרטיס או בנקודות תשלום במזומן {dealers_link}. לעזרה התקשר *3164",
+    "description": "Overdue payment reminder for existing customers",
+    "variables": "subscription_id,dealers_link"
+  }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 2,
+        "message_key": "NEW_INVOICE_GENERATED",
+        "content_en": "A new invoice has been issued for user {{1}}, and full details are available at https://my.jet.net.il/auth/login.",
+        "content_ar": "تم إصدار فاتورة جديدة للمستخدم {{1}}، ويمكن الاطلاع على التفاصيل عبر https://my.jet.net.il/auth/login.",
+        "content_he": "חשבונית חדשה הונפקה עבור המשתמש {{1}}, וניתן לצפות בפרטים באתר https://my.jet.net.il/auth/login.",
+        "description": "A New Invoice Issued",
+        "variables": [
+            "userNo"
+        ]
+    },
+    {
+        "id": 26,
+        "message_key": "welcome_jet_fiber",
+        "content_en": "Thank you for choosing Jet Fiber Internet. Your subscription number {{1}} has been successfully registered. For assistance, call *3164.",
+        "content_ar": "شكرًا لاختيارك إنترنت جت فايبر. تم تسجيل اشتراكك برقم {{1}} بنجاح. للمساعدة اتصل على *3164.",
+        "content_he": "תודה שבחרת באינטרנט ג'ט פייבר. המנוי שלך נרשם בהצלחה עם המספר {{1}}. לעזרה התקשר *3164.",
+        "description": "Welcome message sent after new subscription registration",
+        "variables": [
+            "subscription_id"
+        ]
+    },
+    {
+        "id": 33,
+        "message_key": "invoice_issued",
+        "content_en": "An invoice totaling {{1}} shekels has been issued for subscription {{2}}, and it is available via email or at https://my.jet.net.il.",
+        "content_ar": "تم إصدار فاتورة بقيمة {{1}} شيكل للاشتراك رقم {{2}}، ويمكن العثور عليها عبر بريدك الإلكتروني أو من خلال https://my.jet.net.il.",
+        "content_he": "הופקה חשבונית בסך {{1}} שקלים עבור מנוי {{2}}, והיא זמינה במייל או באתר https://my.jet.net.il.",
+        "description": "Invoice issued notification",
+        "variables": [
+            "amount",
+            "subscription_id"
+        ]
+    },
+    {
+        "id": 34,
+        "message_key": "refund_success",
+        "content_en": "A refund of {{1}} has been successfully processed to card {{2}} for subscription {{3}}, and the transaction has been completed.",
+        "content_ar": "בוצע החזר כספי בסך {{1}} לכרטיס {{2}} עבור מנוי {{3}}, והפעולה הושלמה בהצלחה.",
+        "content_he": "בוצע החזר כספי בסך {{1}} לכרטיס {{2}} עבור מנוי {{3}}, והפעולה הושלמה בהצלחה.",
+        "description": "Refund success notification",
+        "variables": [
+            "amount",
+            "last4_card",
+            "subscription_id"
+        ]
+    },
+    {
+        "id": 35,
+        "message_key": "collection_failed_update_card",
+        "content_en": "Invoice collection from card {{1}} was unsuccessful. To maintain service continuity, open https://jet.net.il/activate-service/{{2}} and please update your card details.",
+        "content_ar": "فشلت عملية تحصيل الفاتورة من البطاقة {{1}}. للحفاظ على استمرارية الخدمة، افتح الرابط https://jet.net.il/activate-service/{{2}} ثم يرجى تحديث بيانات بطاقتك.",
+        "content_he": "גביית החשבונית מהכרטיס {{1}} נכשלה. כדי לשמור על רציפות השירות, פתח את הקישור https://jet.net.il/activate-service/{{2}} ולאחר מכן עדכן את פרטי הכרטיס שלך.",
+        "description": "Collection failure with card update link",
+        "variables": [
+            "last4_card",
+            "reference"
+        ]
+    },
+    {
+        "id": 37,
+        "message_key": "payment_reminder",
+        "content_en": "As a reminder, subscription invoice {{1}} is pending payment. To ensure uninterrupted service, please complete payment at https://my.jet.net.il/ or contact Jet Fiber at *3164.",
+        "content_ar": "تذكير بأن فاتورة الاشتراك رقم {{1}} ما زالت بانتظار السداد. لضمان استمرار الخدمة، يرجى الدفع عبر https://my.jet.net.il/ أو الاتصال على *3164.",
+        "content_he": "לתשומת לבך, חשבונית מנוי {{1}} ממתינה לתשלום. להבטחת המשך השירות, ניתן לשלם דרך https://my.jet.net.il/ או להתקשר ל-*3164.",
+        "description": "Payment reminder message",
+        "variables": [
+            "subscription_id"
+        ]
+    }
+]

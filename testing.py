@@ -6,15 +6,44 @@ from fastapi.responses import PlainTextResponse
 import os
 from dotenv import load_dotenv
 from fastapi import Query
-import time
 from queue import Queue
 import uuid
+import subprocess
+import os
 
+load_dotenv()
+
+phone_id = os.getenv("PHONE_ID")
+whatsapp_id = os.getenv("WHATSAPP_ID")
+access_token = os.getenv("days")
+port = int(os.environ.get("PORT", 8000))
+app = FastAPI()
+business = os.getenv("WABA")
+
+RECIPIENT = "+972527553195"  # recipient phone number in international format
+
+
+VERIFY_TOKEN = "9P0CPkoVQaDULkdtd7PU"  # same value you put in Meta
 
 audio_queue = Queue()
 
-import subprocess
-import os
+
+def get_all_templates():
+    url = f"https://graph.facebook.com/v22.0/{business}/message_templates"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+    }
+
+    params = {"limit": 100}  # increase if needed
+
+    response = requests.get(url, headers=headers, params=params)
+
+    if response.status_code != 200:
+        print("Template fetch error:", response.status_code, response.text)
+        return {"error": response.text}
+
+    return response.json()
 
 
 def audio_worker():
@@ -67,18 +96,6 @@ def download_and_queue_audio(media_id):
         audio_queue.put(file_path)
     else:
         print("No media URL returned")
-
-
-load_dotenv()
-phone_id = os.getenv("PHONE_ID")
-whatsapp_id = os.getenv("WHATSAPP_ID")
-access_token = os.getenv("ACCESS_TOKEN")
-port = int(os.environ.get("PORT", 8000))
-app = FastAPI()
-
-RECIPIENT = "+972527553195"  # recipient phone number in international format
-
-VERIFY_TOKEN = "9P0CPkoVQaDULkdtd7PU"  # same value you put in Meta
 
 
 @app.get("/webhook")
@@ -200,6 +217,8 @@ def send_message():
 
 
 if __name__ == "__main__":
+
+    # print(json.dumps(get_all_templates(), indent=2))  # fetch templates on startup
     sender_thread = threading.Thread(target=terminal_sender, daemon=True)
     sender_thread.start()
 
